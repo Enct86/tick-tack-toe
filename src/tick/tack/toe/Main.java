@@ -21,6 +21,7 @@ public class Main {
             i = Integer.parseInt(input1);
             switch (i) {
                 case 1:
+                    win = false;
                     k++;
                     Game g1 = new Game();
                     g1.clear();
@@ -38,12 +39,35 @@ public class Main {
                         } else {
                             System.out.println("Ячейка занята");
                         }
+                        if (g1.gf[0][0] == 'X' & g1.gf[0][1] == 'X' & g1.gf[0][2] == 'X') {
+                            win = true;
+                        }
+                        if (g1.gf[0][0] == 'X' & g1.gf[1][0] == 'X' & g1.gf[2][0] == 'X') {
+                            win = true;
+                        }
+                        if (g1.gf[1][0] == 'X' & g1.gf[1][1] == 'X' & g1.gf[1][2] == 'X') {
+                            win = true;
+                        }
+                        if (g1.gf[2][0] == 'X' & g1.gf[2][1] == 'X' & g1.gf[2][2] == 'X') {
+                            win = true;
+                        }
+                        if (g1.gf[0][1] == 'X' & g1.gf[1][1] == 'X' & g1.gf[2][1] == 'X') {
+                            win = true;
+                        }
+                        if (g1.gf[0][2] == 'X' & g1.gf[1][2] == 'X' & g1.gf[2][2] == 'X') {
+                            win = true;
+                        }
+                        if (g1.gf[0][0] == 'X' & g1.gf[1][1] == 'X' & g1.gf[2][2] == 'X') {
+                            win = true;
+                        }
+                        if (g1.gf[0][2] == 'X' & g1.gf[1][1] == 'X' & g1.gf[2][0] == 'X') {
+                            win = true;
+                        }
                     } while (win == false);
+                    System.out.println("X WIN!");
             }
-            }
-            while (i != 4);
+        } while (i != 4);
 
-        }
-        
     }
 
+}
