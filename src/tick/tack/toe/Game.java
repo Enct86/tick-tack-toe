@@ -10,5 +10,6 @@ package tick.tack.toe;
  * @author Max
  */
 public class Game {
+    private char gamefield[][] = new char[3][3];
     
 }

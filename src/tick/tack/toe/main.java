@@ -1,21 +1,29 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package tick.tack.toe;
+
+import java.util.Scanner;
 
 /**
  *
- * @author Max
+ * @author Max Savchenko
  */
 public class main {
 
-    /**
-     * @param args the command line arguments
-     */
+
     public static void main(String[] args) {
-        // TODO code application logic here
+        Scanner scanner1 = new Scanner(System.in);
+        int i;
+        System.out.println("Добро пожаловать в игру Крестики Нолики");
+        do {  
+            System.out.printf("1 - Игра против AI, \n2 - Игра против друг друга\n3 \n4 - Выход\n");
+            String input1 = scanner1.nextLine();
+            i = Integer.parseInt(input1);
+            switch(i) {
+                case 1:
+                    
+            }
+            
+        } while (i != 4);
     }
     
 }
