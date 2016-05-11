@@ -13,6 +13,7 @@ public class Main {
         Scanner scanner1 = new Scanner(System.in);
         int i;
         int k = 0;
+        int pvpturn = 0;
         boolean win = false;
         System.out.println("Добро пожаловать в игру Крестики Нолики");
         do {
@@ -65,6 +66,129 @@ public class Main {
                         }
                     } while (win == false);
                     System.out.println("X WIN!");
+                    break;
+                case 2:
+                    win = false;
+                    pvpturn = 0;
+                    Game g2 = new Game();
+                    g2.clear();
+                    g2.draw();
+                    do {
+                        pvpturn++;
+                        System.out.println(pvpturn);
+                        boolean endturnX = false;
+                        do {
+                            System.out.println("Ход X");
+                            System.out.println("Куда сделать ход X (строка - ");
+                            String input2 = scanner1.nextLine();
+                            int strokaX = Integer.parseInt(input2);
+                            System.out.println("Куда сделать ход X (столбец - ");
+                            String input3 = scanner1.nextLine();
+                            int stolbecX = Integer.parseInt(input3);
+                            if (g2.gf[strokaX][stolbecX] == '-') {
+                                g2.gf[strokaX][stolbecX] = 'X';
+                                g2.draw();
+                                endturnX = true;
+                            } else {
+                                System.out.println("Ячейка занята");
+                            }
+                        } while (endturnX == false);
+
+                        if (pvpturn >= 3) {
+                            if (g2.gf[0][0] == 'X' & g2.gf[0][1] == 'X' & g2.gf[0][2] == 'X') {
+                                win = true;
+                                System.out.println("X WIN!");
+                            }
+                            if (g2.gf[0][0] == 'X' & g2.gf[1][0] == 'X' & g2.gf[2][0] == 'X') {
+                                win = true;
+                                System.out.println("X WIN!");
+                            }
+                            if (g2.gf[1][0] == 'X' & g2.gf[1][1] == 'X' & g2.gf[1][2] == 'X') {
+                                win = true;
+                                System.out.println("X WIN!");
+                            }
+                            if (g2.gf[2][0] == 'X' & g2.gf[2][1] == 'X' & g2.gf[2][2] == 'X') {
+                                win = true;
+                                System.out.println("X WIN!");
+                            }
+                            if (g2.gf[0][1] == 'X' & g2.gf[1][1] == 'X' & g2.gf[2][1] == 'X') {
+                                win = true;
+                                System.out.println("X WIN!");
+                            }
+                            if (g2.gf[0][2] == 'X' & g2.gf[1][2] == 'X' & g2.gf[2][2] == 'X') {
+                                win = true;
+                                System.out.println("X WIN!");
+                            }
+                            if (g2.gf[0][0] == 'X' & g2.gf[1][1] == 'X' & g2.gf[2][2] == 'X') {
+                                win = true;
+                                System.out.println("X WIN!");
+                            }
+                            if (g2.gf[0][2] == 'X' & g2.gf[1][1] == 'X' & g2.gf[2][0] == 'X') {
+                                win = true;
+                                System.out.println("X WIN!");
+                            }
+                        }
+                        boolean endturnO = false;
+                        if (pvpturn <= 4 & win == false) {
+
+                            do {
+                                System.out.println("Ход O");
+                                System.out.println("Куда сделать ход O (строка - ");
+                                String input4 = scanner1.nextLine();
+                                int strokaO = Integer.parseInt(input4);
+                                System.out.println("Куда сделать ход O (столбец - ");
+                                String input5 = scanner1.nextLine();
+                                int stolbecO = Integer.parseInt(input5);
+                                if (g2.gf[strokaO][stolbecO] == '-') {
+                                    g2.gf[strokaO][stolbecO] = 'O';
+                                    g2.draw();
+                                    endturnO = true;
+                                } else {
+                                    System.out.println("Ячейка занята");
+                                }
+
+                            } while (endturnO == false);
+
+                            if (pvpturn >= 3 & win == false) {
+                                if (g2.gf[0][0] == 'O' & g2.gf[0][1] == 'O' & g2.gf[0][2] == 'O') {
+                                    win = true;
+                                    System.out.println("O WIN!");
+                                }
+                                if (g2.gf[0][0] == 'O' & g2.gf[1][0] == 'O' & g2.gf[2][0] == 'O') {
+                                    win = true;
+                                    System.out.println("O WIN!");
+                                }
+                                if (g2.gf[1][0] == 'O' & g2.gf[1][1] == 'O' & g2.gf[1][2] == 'O') {
+                                    win = true;
+                                    System.out.println("O WIN!");
+                                }
+                                if (g2.gf[2][0] == 'O' & g2.gf[2][1] == 'O' & g2.gf[2][2] == 'O') {
+                                    win = true;
+                                    System.out.println("O WIN!");
+                                }
+                                if (g2.gf[0][1] == 'O' & g2.gf[1][1] == 'O' & g2.gf[2][1] == 'O') {
+                                    win = true;
+                                    System.out.println("O WIN!");
+                                }
+                                if (g2.gf[0][2] == 'O' & g2.gf[1][2] == 'O' & g2.gf[2][2] == 'O') {
+                                    win = true;
+                                    System.out.println("O WIN!");
+                                }
+                                if (g2.gf[0][0] == 'O' & g2.gf[1][1] == 'O' & g2.gf[2][2] == 'O') {
+                                    win = true;
+                                    System.out.println("O WIN!");
+                                }
+                                if (g2.gf[0][2] == 'O' & g2.gf[1][1] == 'O' & g2.gf[2][0] == 'O') {
+                                    win = true;
+                                    System.out.println("O WIN!");
+                                }
+                            }
+                        }
+                        if (pvpturn == 5 & win == false) {
+                            win = true;
+                            System.out.println("DRAW");
+                        }
+                    } while (win == false);
             }
         } while (i != 4);
 
