@@ -40,30 +40,8 @@ public class Main {
                         } else {
                             System.out.println("Ячейка занята");
                         }
-                        if (g1.gf[0][0] == 'X' & g1.gf[0][1] == 'X' & g1.gf[0][2] == 'X') {
-                            win = true;
-                        }
-                        if (g1.gf[0][0] == 'X' & g1.gf[1][0] == 'X' & g1.gf[2][0] == 'X') {
-                            win = true;
-                        }
-                        if (g1.gf[1][0] == 'X' & g1.gf[1][1] == 'X' & g1.gf[1][2] == 'X') {
-                            win = true;
-                        }
-                        if (g1.gf[2][0] == 'X' & g1.gf[2][1] == 'X' & g1.gf[2][2] == 'X') {
-                            win = true;
-                        }
-                        if (g1.gf[0][1] == 'X' & g1.gf[1][1] == 'X' & g1.gf[2][1] == 'X') {
-                            win = true;
-                        }
-                        if (g1.gf[0][2] == 'X' & g1.gf[1][2] == 'X' & g1.gf[2][2] == 'X') {
-                            win = true;
-                        }
-                        if (g1.gf[0][0] == 'X' & g1.gf[1][1] == 'X' & g1.gf[2][2] == 'X') {
-                            win = true;
-                        }
-                        if (g1.gf[0][2] == 'X' & g1.gf[1][1] == 'X' & g1.gf[2][0] == 'X') {
-                            win = true;
-                        }
+                        g1.wincondX();
+                        win = g1.winconditionX;
                     } while (win == false);
                     System.out.println("X WIN!");
                     break;
@@ -75,7 +53,6 @@ public class Main {
                     g2.draw();
                     do {
                         pvpturn++;
-                        System.out.println(pvpturn);
                         boolean endturnX = false;
                         do {
                             System.out.println("Ход X");
@@ -93,40 +70,10 @@ public class Main {
                                 System.out.println("Ячейка занята");
                             }
                         } while (endturnX == false);
-
-                        if (pvpturn >= 3) {
-                            if (g2.gf[0][0] == 'X' & g2.gf[0][1] == 'X' & g2.gf[0][2] == 'X') {
-                                win = true;
-                                System.out.println("X WIN!");
-                            }
-                            if (g2.gf[0][0] == 'X' & g2.gf[1][0] == 'X' & g2.gf[2][0] == 'X') {
-                                win = true;
-                                System.out.println("X WIN!");
-                            }
-                            if (g2.gf[1][0] == 'X' & g2.gf[1][1] == 'X' & g2.gf[1][2] == 'X') {
-                                win = true;
-                                System.out.println("X WIN!");
-                            }
-                            if (g2.gf[2][0] == 'X' & g2.gf[2][1] == 'X' & g2.gf[2][2] == 'X') {
-                                win = true;
-                                System.out.println("X WIN!");
-                            }
-                            if (g2.gf[0][1] == 'X' & g2.gf[1][1] == 'X' & g2.gf[2][1] == 'X') {
-                                win = true;
-                                System.out.println("X WIN!");
-                            }
-                            if (g2.gf[0][2] == 'X' & g2.gf[1][2] == 'X' & g2.gf[2][2] == 'X') {
-                                win = true;
-                                System.out.println("X WIN!");
-                            }
-                            if (g2.gf[0][0] == 'X' & g2.gf[1][1] == 'X' & g2.gf[2][2] == 'X') {
-                                win = true;
-                                System.out.println("X WIN!");
-                            }
-                            if (g2.gf[0][2] == 'X' & g2.gf[1][1] == 'X' & g2.gf[2][0] == 'X') {
-                                win = true;
-                                System.out.println("X WIN!");
-                            }
+                        g2.wincondX();
+                        win = g2.winconditionX;
+                        if (win) {
+                            System.out.println("X win!");
                         }
                         boolean endturnO = false;
                         if (pvpturn <= 4 & win == false) {
@@ -149,46 +96,18 @@ public class Main {
 
                             } while (endturnO == false);
 
-                            if (pvpturn >= 3 & win == false) {
-                                if (g2.gf[0][0] == 'O' & g2.gf[0][1] == 'O' & g2.gf[0][2] == 'O') {
-                                    win = true;
-                                    System.out.println("O WIN!");
+                            g2.wincondO();
+                            if (g2.winconditionO) {
+                                    System.out.println("O win!");
+                                    win = g2.winconditionO;
                                 }
-                                if (g2.gf[0][0] == 'O' & g2.gf[1][0] == 'O' & g2.gf[2][0] == 'O') {
-                                    win = true;
-                                    System.out.println("O WIN!");
-                                }
-                                if (g2.gf[1][0] == 'O' & g2.gf[1][1] == 'O' & g2.gf[1][2] == 'O') {
-                                    win = true;
-                                    System.out.println("O WIN!");
-                                }
-                                if (g2.gf[2][0] == 'O' & g2.gf[2][1] == 'O' & g2.gf[2][2] == 'O') {
-                                    win = true;
-                                    System.out.println("O WIN!");
-                                }
-                                if (g2.gf[0][1] == 'O' & g2.gf[1][1] == 'O' & g2.gf[2][1] == 'O') {
-                                    win = true;
-                                    System.out.println("O WIN!");
-                                }
-                                if (g2.gf[0][2] == 'O' & g2.gf[1][2] == 'O' & g2.gf[2][2] == 'O') {
-                                    win = true;
-                                    System.out.println("O WIN!");
-                                }
-                                if (g2.gf[0][0] == 'O' & g2.gf[1][1] == 'O' & g2.gf[2][2] == 'O') {
-                                    win = true;
-                                    System.out.println("O WIN!");
-                                }
-                                if (g2.gf[0][2] == 'O' & g2.gf[1][1] == 'O' & g2.gf[2][0] == 'O') {
-                                    win = true;
-                                    System.out.println("O WIN!");
-                                }
-                            }
                         }
                         if (pvpturn == 5 & win == false) {
                             win = true;
                             System.out.println("DRAW");
                         }
                     } while (win == false);
+                    break;
             }
         } while (i != 4);
 

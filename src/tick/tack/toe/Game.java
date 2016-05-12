@@ -13,6 +13,8 @@ public class Game implements Draw {
 
     public char[][] gf = new char[3][3]; // Game Field
     int gamenumber; // Game quantity for future)
+    boolean winconditionX;
+    boolean winconditionO;
 
     public void draw() {
         System.out.printf("%s %s %s\n%s %s %s\n%s %s %s\n", gf[0][0], gf[0][1], gf[0][2], gf[1][0], gf[1][1], gf[1][2], gf[2][0], gf[2][1], gf[2][2]);
@@ -28,5 +30,58 @@ public class Game implements Draw {
         gf[2][0] = '-';
         gf[2][1] = '-';
         gf[2][2] = '-';
+    }
+
+    public void wincondX() {
+        if (gf[0][0] == 'X' & gf[0][1] == 'X' & gf[0][2] == 'X') {
+            winconditionX = true;
+        }
+        if (gf[0][0] == 'X' & gf[1][0] == 'X' & gf[2][0] == 'X') {
+            winconditionX = true;
+        }
+        if (gf[1][0] == 'X' & gf[1][1] == 'X' & gf[1][2] == 'X') {
+            winconditionX = true;
+        }
+        if (gf[2][0] == 'X' & gf[2][1] == 'X' & gf[2][2] == 'X') {
+            winconditionX = true;
+        }
+        if (gf[0][1] == 'X' & gf[1][1] == 'X' & gf[2][1] == 'X') {
+            winconditionX = true;
+        }
+        if (gf[0][2] == 'X' & gf[1][2] == 'X' & gf[2][2] == 'X') {
+            winconditionX = true;
+        }
+        if (gf[0][0] == 'X' & gf[1][1] == 'X' & gf[2][2] == 'X') {
+            winconditionX = true;
+        }
+        if (gf[0][2] == 'X' & gf[1][1] == 'X' & gf[2][0] == 'X') {
+            winconditionX = true;
+        }
+    }
+    public void wincondO() {
+        if (gf[0][0] == 'O' & gf[0][1] == 'O' & gf[0][2] == 'O') {
+            winconditionO = true;
+        }
+        if (gf[0][0] == 'O' & gf[1][0] == 'O' & gf[2][0] == 'O') {
+            winconditionO = true;
+        }
+        if (gf[1][0] == 'O' & gf[1][1] == 'O' & gf[1][2] == 'O') {
+            winconditionO = true;
+        }
+        if (gf[2][0] == 'O' & gf[2][1] == 'O' & gf[2][2] == 'O') {
+            winconditionO = true;
+        }
+        if (gf[0][1] == 'O' & gf[1][1] == 'O' & gf[2][1] == 'O') {
+            winconditionO = true;
+        }
+        if (gf[0][2] == 'O' & gf[1][2] == 'O' & gf[2][2] == 'O') {
+            winconditionO = true;
+        }
+        if (gf[0][0] == 'O' & gf[1][1] == 'O' & gf[2][2] == 'O') {
+            winconditionO = true;
+        }
+        if (gf[0][2] == 'O' & gf[1][1] == 'O' & gf[2][0] == 'O') {
+            winconditionO = true;
+        }
     }
 }

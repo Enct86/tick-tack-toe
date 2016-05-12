@@ -12,4 +12,6 @@ package tick.tack.toe;
 public interface Draw {
     void draw();
     void clear();
+    void wincondX();
+    void wincondO();
 }
