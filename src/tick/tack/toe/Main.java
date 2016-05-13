@@ -23,6 +23,7 @@ public class Main {
             i = Integer.parseInt(input1);
             switch (i) {
                 case 1:
+                    pvaiturn = 0;
                     win = false;
                     Game g1 = new Game();
                     g1.clear();
@@ -48,21 +49,23 @@ public class Main {
                             case 1:
                                 if (g1.gf[1][1] == 'X') {
                                     g1.gf[0][0] = 'O';
-                                    playerposition = 10;
+                                    playerposition = 1;
                                 } else {
                                     g1.gf[1][1] = 'O';
-                                    playerposition = 20;
+                                    playerposition = 2;
                                 }
                                 g1.draw();
                                 break;
                             case 2:
                                 switch (playerposition) {
-                                    case 10:
+                                    case 1:
                                         if (g1.gf[2][2] == 'X') {
                                             g1.gf[2][0] = 'O';
+                                            playerposition = 11;
                                         }
                                         if (g1.gf[0][1] == 'X') {
                                             g1.gf[2][1] = 'O';
+                                            playerposition = 12;
                                         }
                                         if (g1.gf[0][2] == 'X') {
                                             g1.gf[2][0] = 'O';
@@ -81,71 +84,123 @@ public class Main {
                                         }
                                         g1.draw();
                                         break;
-                                    case 20:
+                                    case 2:
                                         if (g1.gf[0][0] == 'X' & g1.gf[0][1] == 'X') {
                                             g1.gf[0][2] = 'O';
-                                            playerposition = 21;
                                         }
                                         if (g1.gf[0][2] == 'X' & g1.gf[0][1] == 'X') {
                                             g1.gf[0][0] = 'O';
-                                            playerposition = 22;
                                         }
                                         if (g1.gf[0][2] == 'X' & g1.gf[1][2] == 'X') {
                                             g1.gf[2][2] = 'O';
-                                            playerposition = 23;
                                         }
                                         if (g1.gf[1][2] == 'X' & g1.gf[2][2] == 'X') {
                                             g1.gf[0][2] = 'O';
-                                            playerposition = 24;
                                         }
                                         if (g1.gf[2][2] == 'X' & g1.gf[2][1] == 'X') {
                                             g1.gf[2][0] = 'O';
-                                            playerposition = 25;
                                         }
                                         if (g1.gf[2][0] == 'X' & g1.gf[2][1] == 'X') {
                                             g1.gf[2][2] = 'O';
-                                            playerposition = 26;
                                         }
                                         if (g1.gf[2][0] == 'X' & g1.gf[1][0] == 'X') {
                                             g1.gf[0][0] = 'O';
-                                            playerposition = 27;
                                         }
                                         if (g1.gf[0][0] == 'X' & g1.gf[1][0] == 'X') {
                                             g1.gf[2][0] = 'O';
-                                            playerposition = 28;
                                         }
                                         if (g1.gf[0][0] == 'X' & g1.gf[0][2] == 'X') {
                                             g1.gf[0][1] = 'O';
-                                            playerposition = 29;
                                         }
                                         if (g1.gf[0][0] == 'X' & g1.gf[2][0] == 'X') {
                                             g1.gf[1][0] = 'O';
-                                            playerposition = 32;
                                         }
                                         if (g1.gf[0][2] == 'X' & g1.gf[2][2] == 'X') {
                                             g1.gf[1][2] = 'O';
-                                            playerposition = 30;
                                         }
                                         if (g1.gf[2][0] == 'X' & g1.gf[2][2] == 'X') {
                                             g1.gf[2][1] = 'O';
-                                            playerposition = 31;
                                         }
                                         if (g1.gf[2][0] == 'X' & g1.gf[0][2] == 'X') {
                                             g1.gf[0][1] = 'O';
-                                            playerposition = 33;
                                         }
                                         if (g1.gf[0][0] == 'X' & g1.gf[2][2] == 'X') {
                                             g1.gf[0][1] = 'O';
-                                            playerposition = 34;
+                                        }
+                                        if (g1.gf[0][0] == 'X' & g1.gf[1][2] == 'X') {
+                                            g1.gf[0][2] = 'O';
+                                        }
+                                        if (g1.gf[0][0] == 'X' & g1.gf[2][1] == 'X') {
+                                            g1.gf[2][0] = 'O';
+                                        }
+                                        if (g1.gf[2][2] == 'X' & g1.gf[0][1] == 'X') {
+                                            g1.gf[0][2] = 'O';
+                                        }
+                                        if (g1.gf[2][2] == 'X' & g1.gf[1][0] == 'X') {
+                                            g1.gf[0][2] = 'O';
+                                        }
+                                        if (g1.gf[0][2] == 'X' & g1.gf[2][1] == 'X') {
+                                            g1.gf[0][2] = 'O';
+                                        }
+                                        if (g1.gf[0][2] == 'X' & g1.gf[1][0] == 'X') {
+                                            g1.gf[2][0] = 'O';
+                                        }
+                                        if (g1.gf[2][0] == 'X' & g1.gf[0][1] == 'X') {
+                                            g1.gf[0][0] = 'O';
+                                        }
+                                        if (g1.gf[2][0] == 'X' & g1.gf[1][2] == 'X') {
+                                            g1.gf[0][2] = 'O';
                                         }
                                         g1.draw();
                                         break;
                                 }
-//                            case 3:
+                                break;
+                            case 3:
+                                do {
+                                    g1.aiturnend = false;
+                                    if (g1.aiturnend == false) {
+                                        g1.aiattack();
+                                    }
+                                    if (g1.aiturnend == false) {
+                                        g1.aidefence();
+                                    }
+                                    if (g1.aiturnend == false) {
+                                        g1.aifindempty();
+                                    }
+                                } while (g1.aiturnend == false);
+                                g1.draw();
+                                if (g1.aiwin) {
+                                    win = true;
+                                    System.out.println("AI WIN! BUGAGA)))");
+                                }
+                                break;
+                            case 4:
+                                do {
+                                    g1.aiturnend = false;
+                                    if (g1.aiturnend == false) {
+                                        g1.aiattack();
+                                    }
+                                    if (g1.aiturnend == false) {
+                                        g1.aidefence();
+                                    }
+                                    if (g1.aiturnend == false) {
+                                        g1.aifindempty();
+                                    }
+                                } while (g1.aiturnend == false);
+                                g1.draw();
+                                if (g1.aiwin) {
+                                    win = true;
+                                    System.out.println("AI WIN! BUGAGA)))");
+                                }
+                                break;
+                            case 5:
+                                g1.draw();
+                                System.out.println("DRAW!) HUMAN CANT BEAT ME!)))");
+                                win = true;
+                                break;
 
                         }
                     } while (win == false);
-                    System.out.println("Drow !HUMAN CANT WIN ME!");
                     break;
                 case 2:
                     win = false;

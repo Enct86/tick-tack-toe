@@ -14,4 +14,7 @@ public interface Draw {
     void clear();
     void wincondX();
     void wincondO();
+    void aiattack();
+    void aidefence();
+    void aifindempty();
 }
